@@ -1,0 +1,25 @@
+fastapi
+uvicorn
+python-dotenv
+openai-whisper
+groq
+openai
+python-multipart
+websockets
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch
+numpy
+pydub
+ffmpeg-python
+psutil
+slowapi
+aiohttp
+scipy
+scikit-learn
+pytest
+pytest-cov
+pytest-asyncio
+soundfile
+pymongo
+pyannote.audio==3.3.1
+transformers

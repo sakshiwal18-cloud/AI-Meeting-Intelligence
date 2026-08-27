@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI MOM Sidebar</title>
+  <link rel="stylesheet" href="panel.css">
+</head>
+<body>
+  <div id="setup-overlay" class="setup-overlay" hidden>
+    <div class="setup-card">
+      <div class="setup-brand">
+        <div class="brand-mark">AI</div>
+        <div>
+          <p class="eyebrow">AI MOM</p>
+          <h1>Bring Your Own Keys</h1>
+          <p class="subhead">Add your API keys to enable transcription and summaries. Keys are stored locally and written to the backend <code>.env</code>.</p>
+        </div>
+      </div>
+
+      <div class="setup-fields">
+        <label for="setup-backend">Backend URL</label>
+        <input id="setup-backend" type="url" value="http://localhost:8000" placeholder="http://localhost:8000">
+
+        <label for="setup-groq">Groq API Key <span class="muted">(required)</span></label>
+        <input id="setup-groq" type="password" placeholder="gsk_..." autocomplete="off">
+
+        <label for="setup-openrouter">OpenRouter API Key <span class="muted">(required)</span></label>
+        <input id="setup-openrouter" type="password" placeholder="sk-or-v1-..." autocomplete="off">
+
+        <label for="setup-hf">HuggingFace Token <span class="muted">(optional, diarization)</span></label>
+        <input id="setup-hf" type="password" placeholder="hf_..." autocomplete="off">
+      </div>
+
+      <p id="setup-status" class="setup-status muted">Enter your keys and save to continue.</p>
+
+      <div class="button-row">
+        <button id="setup-skip" class="btn ghost">Use existing keys</button>
+        <button id="setup-save" class="btn primary">Save & Continue</button>
+      </div>
+    </div>
+  </div>
+
+  <main id="main-shell" class="shell" hidden>
+    <header class="hero">
+      <div class="brand-mark">AI</div>
+      <div class="hero-text">
+        <p class="eyebrow">AI MOM</p>
+        <h1>Meeting Sidebar</h1>
+      </div>
+      <div class="hero-actions">
+        <button id="reset-keys-btn" class="icon-btn" title="Change API keys">⚙</button>
+        <button id="toggle-btn" class="icon-btn" title="Close sidebar">×</button>
+      </div>
+    </header>
+
+    <section class="card status-card compact">
+      <div class="status-row">
+        <span class="status-dot" id="status-dot"></span>
+        <div class="status-text-wrap">
+          <p class="label">Backend</p>
+          <h2 id="status-text">Unknown</h2>
+        </div>
+        <button id="test-btn" class="btn primary mini">Connect</button>
+      </div>
+      <p class="muted small" id="status-detail">Connect to the local backend to verify the setup.</p>
+      <details class="advanced-toggle">
+        <summary>Backend URL</summary>
+        <div class="advanced-body">
+          <input id="backend-url" type="url" value="http://localhost:8000" placeholder="http://localhost:8000">
+          <button id="save-btn" class="btn secondary mini">Save</button>
+        </div>
+      </details>
+    </section>
+
+    <section class="card record-card">
+      <div class="card-head">
+        <label>Live transcription</label>
+        <span id="record-pill" class="pill idle">Idle</span>
+      </div>
+      <p id="live-state" class="live-state ready">Idle</p>
+      <div class="button-grid">
+        <button id="share-btn" class="btn primary big">▶ Start</button>
+        <button id="stop-share-btn" class="btn danger big" disabled>■ Stop</button>
+      </div>
+      <button id="upload-btn" class="btn ghost wide">Upload audio file</button>
+      <input id="audio-file" type="file" accept="audio/*" hidden>
+      <p id="file-name" class="muted small file-name"></p>
+    </section>
+
+    <section class="card transcript-card">
+      <div class="card-head">
+        <label>Transcript</label>
+        <button id="clear-transcript-btn" class="ghost-btn" type="button">Clear</button>
+      </div>
+      <div id="transcript-list" class="transcript-list">
+        <div class="transcript-empty">No transcriptions yet. Click Start to see speaker turns.</div>
+      </div>
+    </section>
+  </main>
+
+  <script src="panel.js"></script>
+</body>
+</html>
