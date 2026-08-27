@@ -873,6 +873,3 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 
 ---
 
-**[⭐ Star this repo](https://github.com/Baisampayan1324/AI-MOM) if you find it useful!**
-
-</div>
