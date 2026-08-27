@@ -873,14 +873,6 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 
 ---
 
-<div align="center">
-
-**Built with ❤️ by developers, for developers**
-
-[![GitHub Stars](https://img.shields.io/github/stars/Baisampayan1324/AI-MOM?style=social)](https://github.com/Baisampayan1324/AI-MOM)
-[![GitHub Forks](https://img.shields.io/github/forks/Baisampayan1324/AI-MOM?style=social)](https://github.com/Baisampayan1324/AI-MOM/fork)
-[![GitHub Issues](https://img.shields.io/github/issues/Baisampayan1324/AI-MOM)](https://github.com/Baisampayan1324/AI-MOM/issues)
-
 **[⭐ Star this repo](https://github.com/Baisampayan1324/AI-MOM) if you find it useful!**
 
 </div>
